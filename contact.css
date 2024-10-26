@@ -1,0 +1,253 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+
+    --Green-200-lighter: hsl(148, 38%, 91%);
+    --Green-600-medium: hsl(169, 82%, 27%);
+    --Red: hsl(0, 66%, 54%);
+    --White: hsl(0, 0%, 100%);
+    --Grey500: hsl(186, 15%, 59%);
+    --Grey900: hsl(187, 24%, 22%);
+    --Font-size: 16px;
+
+}
+
+body{
+    background-color: var(--Green-200-lighter);
+    font-family: 'Karla', sans-serif;
+    color: var(--Grey900);
+    padding: 14vh 0vw;
+    font-size: var(--Font-size);
+
+}
+
+
+h1,h5 {
+    font-weight: 700;
+}
+
+p {
+    font-weight: 400;
+    color: var(--Red);
+    padding-top: 12vh;
+    display: none; 
+    position: absolute;
+}
+
+.Query p {
+    margin-top: 1vh;
+}
+
+.message p {
+    margin-top: 8vh;
+}
+
+.check p {
+    margin-top: -9vh;
+}
+
+main {
+    background-color: var(--White);
+    width: 50vw;
+    max-width: 50vw;
+    padding: 5vh 4vw;
+    margin: -1vh 25vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1vw;
+}
+
+.contact, 
+.name, 
+.address, 
+.Query, 
+.message, 
+.check {
+    padding-bottom: 5vh;
+}
+
+
+.name,
+.radio{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.first,
+.last,
+.address,
+.Query,
+.message
+ {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.General, 
+.support {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid;
+    border-radius: 1vw;
+    width: 20vw;
+    height: 8vh;
+}
+
+.General input,
+.support input{
+    cursor: pointer;
+
+}
+
+.radio label{
+    width: 50vw;
+}
+
+label {
+    padding-bottom: 1vh;
+    width: -webkit-fill-available;
+}
+
+input {
+    padding: 2vh 1vw;
+    width: 20vw;
+    border:1px solid var(--Grey900);
+    border-radius: 1vw;
+    
+}
+
+.address input {
+    width: -webkit-fill-available;
+}
+
+.message textarea {
+    padding: 2vh 1vw;
+    width: -webkit-fill-available;
+    height: 15vh;
+    resize: none;
+
+}
+
+.check {
+    display: flex;
+    align-items: flex-start;
+    gap: 2vw;
+}
+
+.box input {
+    margin: 0vh -9vw;
+    cursor: pointer;
+}
+
+button {
+    padding: 2vh 1vw;
+    border:2px solid;
+    border-radius: 0.5vw;
+    background-color: var(--Green-600-medium);
+    color: white;
+    cursor: pointer;
+
+}
+
+button:active{
+    background-color: var(--Grey900);
+}
+
+header {
+    background-color: var(--Grey900);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    margin: -12vh 30vw;
+    padding: 2vh 1vw;
+    border-radius: 1vw;
+    opacity: 0; 
+    transform: translateY(-10px); 
+    transition: opacity 2.5s ease, transform 0.5s ease;  
+    position: absolute;
+}
+
+header.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2vw;
+    padding-bottom: 3vh;
+}
+
+.error-border {
+    border: 2px solid var(--Red);
+}
+
+@media screen and (max-width: 575px)  {
+    
+    .name, 
+    .radio {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5vh;
+    }
+
+    input {
+        width: -webkit-fill-available;
+
+    }
+
+    .first, .last, .address, .Query, .message {
+        width: -webkit-fill-available;
+    }
+
+    main {
+        width: 74vw;
+        max-width: 74vw;
+        margin: -1vh 10vw;
+    }
+
+    .General, .support {
+        width: -webkit-fill-available;
+    }
+
+    .radio label {
+        width: 100vw;
+    }
+
+    .Query p {
+        margin-top: 14vh;
+    }
+
+    .check p {
+        font-size: smaller;
+        width: 65vw;
+    }
+
+    header {
+        width: 60vw;
+        margin: -12vh 18vw;
+        text-align: center;
+    }
+
+}
